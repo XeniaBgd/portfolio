@@ -134,6 +134,10 @@ img{
   background-image: url("img/icon-css.svg");
 }
 
+.skill-js {
+  background-image: url("img/icon-js.svg"); 
+}
+
 .skill-c {
   background-image: url("img/icon-c++.svg"); 
 }
