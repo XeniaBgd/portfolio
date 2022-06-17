@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">    
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
     <title>Портфолио Альпаки верстальщика</title>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -35,9 +36,19 @@
         <p>Могу есть кофе.</p>    
       </div>
       <div class="container skills">
-        <h3>Мои навыки</h3>
+        <header>
+          <h3>Мои навыки</h3>
+          <div class="sort-container" >
+            <h3>Сортировать:</h3>
+            <div class="sort-buttons" >
+            <button class="skills-sort-buttons by-level">По уровню</button>
+            <button class="skills-sort-buttons by-name">По имени</button>
+          </div>
+          </div>
+        </header>
         <dl class="skills-list">          
         </dl>
+        
       </div>
     </section>
 
@@ -60,7 +71,6 @@
         <a class="footer-email" href="mailto:ksenbogdanova05@gmail.com">ksenbogdanova05@gmail.com</a>          
         <a class="footer-phone" href="tel:+79771233344">+7 977 123-33-44</a>
       </div>
-    </footer>
-    <script src="script.js"></script>
+    </footer>    
   </body>
 </html>
