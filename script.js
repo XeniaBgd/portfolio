@@ -4,46 +4,28 @@ function SkillList() {
             this.name = name;
             this.level = level;
         }
-    }
+    }   
 
-    function SortByLevel(){       
-        let button = document.querySelector(".by-level");
-        button.desc = false;
-        button.onclick = function(){
-            if(this.desc){
-                this.desc = false;
-                skills.list.sort((a, b) => Number(a.level.slice(0,-2)) > Number(b.level.slice(0,-2)));                                  
-            }
-            else{
-                this.desc = true;
-                skills.list.sort((a, b) => Number(a.level.slice(0,-2)) < Number(b.level.slice(0,-2)));     
-                    
-            }
-            skills.generateElements();
-            skills.resetSortedButtons(button);
-        }       
-    }
-
-    function SortByName(){       
-        let button = document.querySelector(".by-name");
+    function setSort(field){       
+        let button = document.querySelector(`.by-${field}`);
         button.desc = false;
         button.onclick = function(){
             if(this.desc){
                 this.desc = false;                
-                skills.list.sort((a, b) => a.name < b.name);
-                //skills.list = skills.list.reverse();
-               
+                skills.list.sort((a, b) => a[field] > b[field]);              
             }
             else{
                 this.desc = true;
-                skills.list.sort((a, b) => a.name > b.name);                
+                skills.list.sort((a, b) => a[field] < b[field]);                
             }
             skills.generateElements();
             skills.resetSortedButtons(button);
-        }     
-    }
-    SortByLevel();
-    SortByName();
+        }            
+    }   
+       
+    /* RULE // setting sorting for button css classes '.by-{field}', field - from class Skill */
+    setSort("level")
+    setSort("name")  
 
     return {    
         sortedBy: "",   
@@ -60,7 +42,7 @@ function SkillList() {
             skillsListElement.innerHTML = '';
             this.list.forEach(skill => {
                 let decl = document.createElement("dt");
-                // image name format: img/icon-{lowercase name}.svg
+                /* RULE // image name format: img/icon-{lowercase name}.svg */
                 decl.style.backgroundImage = `url('img/icon-${skill.name.toLowerCase()}.svg')`;
                 decl.innerHTML = skill.name ;
             

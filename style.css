@@ -22,10 +22,7 @@ img{
   height: auto;
 }
 
-.container {
-  /*max-width: 928px;
-  margin: 0 auto;
-  */
+.container { 
   padding: 0 16px;
   margin: auto;
 }
@@ -111,7 +108,7 @@ img{
 
 .intro h3,
 .portfolio h3 {
-  /*margin: 0 0 12px;*/
+  margin: 0 0 12px;
   font-size: 28px;
   line-height: 1.5;
   font-weight: 500;
@@ -176,8 +173,11 @@ img{
 
 .sort-container{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between;  
+}
+
+.sort-container div{
+  margin-bottom: 30px;  
 }
 
 .sort-container h3{
@@ -193,7 +193,8 @@ img{
   background-color: transparent;
   cursor: pointer;
   color: var(--text-color);
-  border: 2px solid var(--level-border);  
+  border: 2px solid var(--level-border); 
+  margin-right: 10px;  
 }
 
 .skills-sort-buttons:hover {
@@ -234,6 +235,7 @@ img{
   border-radius: 4px;
   background-color: #712073;
   color: #ffffff;
+  margin-bottom: 30px;
 }
 
 .page-footer {
@@ -269,27 +271,13 @@ img{
   .heading{
     font-size: 60px;
   }
-  
-}
-
-@media screen and (max-width: 730px){
-  .skills h3{
-    font-size: 22px;
-  }
-}
-
-@media screen and (max-width: 650px){
-  .skills-sort-buttons{   
-    padding: 12px;   
-  }
   .skills header{
     flex-direction: column;
   }
   .sort-container{
-    justify-content: flex-start;
-    
-  } 
-  
+    flex-direction: column;
+    align-items:flex-start;       
+  }   
 }
 
 @media screen and (max-width: 560px){
@@ -299,9 +287,7 @@ img{
   .subheading{
     font-size: 46px;
   }  
-  .skills-sort-buttons{    
-    width: 80%;
-  }
+  
 }
 
 @media screen and (max-width: 430px){
@@ -310,10 +296,7 @@ img{
   }
   .subheading{
     font-size: 36px;
-  }
-  .skills-sort-buttons{    
-    width: 90%;
-  }  
+  }   
 }
 
 @media screen and (max-width: 360px){
