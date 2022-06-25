@@ -27,8 +27,7 @@ function SkillList() {
             /* async */
             fetch('db/skills.json')
             .then(data => data.json())
-            .then(json => {
-                console.log(json);
+            .then(json => {               
                 this.list = json;
                 this.generateElements();
             })
