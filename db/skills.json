@@ -1,0 +1,26 @@
+[
+    {
+        "name" : "HTML",
+        "level" : "30%"
+    },
+    {
+        "name" : "CSS",
+        "level" : "40%"
+    },
+    {
+        "name" : "JS",
+        "level" : "30%"
+    },
+    {
+        "name" : "C++",
+        "level" : "72%"
+    },
+    {
+        "name" : "Go",
+        "level" : "50%"
+    },
+    {
+        "name" : "SQL",
+        "level" : "60%"
+    }
+]

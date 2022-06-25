@@ -1,11 +1,4 @@
-function SkillList() {
-    class Skill {
-        constructor(name, level) {
-            this.name = name;
-            this.level = level;
-        }
-    }   
-
+function SkillList() {   
     function setSort(field){       
         let button = document.querySelector(`.by-${field}`);
         button.desc = false;
@@ -21,7 +14,7 @@ function SkillList() {
             skills.generateElements();
             skills.resetSortedButtons(button);
         }            
-    }   
+    }     
        
     /* RULE // setting sorting for button css classes '.by-{field}', field - from class Skill */
     setSort("level")
@@ -29,15 +22,18 @@ function SkillList() {
 
     return {    
         sortedBy: "",   
-        list:
-        [
-            new Skill("HTML", "30%"),
-            new Skill("CSS", "40%"),
-            new Skill("JS", "30%"),
-            new Skill("C++", "72%"),
-            new Skill("Go", "50%"),
-            new Skill("SQL", "60%")
-        ],
+        list:[],        
+        getSkills: function(){
+            /* async */
+            fetch('db/skills.json')
+            .then(data => data.json())
+            .then(json => {
+                console.log(json);
+                this.list = json;
+                this.generateElements();
+            })
+            .catch(() => console.error("error"));       
+        },
         generateElements: function(){              
             skillsListElement.innerHTML = '';
             this.list.forEach(skill => {
@@ -51,7 +47,7 @@ function SkillList() {
             
                 let container = document.createElement("div");
                 container.style.width = skill.level;
-                container.textContent = skill.level  ; 
+                container.textContent = skill.level; 
                 level.appendChild(container);
             
                 skillsListElement.appendChild(decl);
@@ -70,8 +66,9 @@ function SkillList() {
 
 const skillsListElement = document.querySelector(".skills-list");
 
-let skills = new SkillList()
-skills.generateElements()
+let skills = new SkillList();
+skills.getSkills();
+
 
 
 
